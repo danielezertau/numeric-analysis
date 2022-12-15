@@ -60,6 +60,14 @@ def q1c():
         print(f"b: {b}, result: {r}, num iterations: {num_iter}")
 
 
+def q1d():
+    a = 1 + 0j
+    b = 0 + 5j
+    f = lambda z: (z ** 3) + z - 1
+    comp_root, _ = secant_method(f, a, b, 1e-10)
+    return comp_root, np.conj(comp_root)
+
+
 def q3a_factorial(n):
     return math.pow(n, n) / factorial(n, exact=True)
 
@@ -163,6 +171,4 @@ def q4b():
 
 
 if __name__ == '__main__':
-    q1c()
-    q4a()
-    q4b()
+    print(q1d())
