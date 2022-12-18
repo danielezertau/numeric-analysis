@@ -68,6 +68,16 @@ def q1d():
     return comp_root, np.conj(comp_root)
 
 
+def cond_num(X, norm):
+    return np.linalg.norm(X, ord=norm) * np.linalg.norm(np.linalg.inv(X), ord=norm)
+
+
+def q2c(eps, delta):
+    A = np.array([[1, 1], [0, eps]], dtype=float)
+    B = np.array([[1, 0], [1, delta]], dtype=float)
+    return float(cond_num(A, norm=2) * float(cond_num(B, norm=2)))
+
+
 def q3a_factorial(n):
     return math.pow(n, n) / factorial(n, exact=True)
 
@@ -171,4 +181,4 @@ def q4b():
 
 
 if __name__ == '__main__':
-    print(q1d())
+    print(f"{q2c(5e-7, 1e-7):e}")
