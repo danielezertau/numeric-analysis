@@ -79,7 +79,7 @@ def q2c(eps, delta):
 
 
 def q3a_factorial(n):
-    return (n ** n) / factorial(n, exact=True)
+    return (n ** n) / factorial(n)
 
 
 def q3b():
