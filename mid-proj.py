@@ -5,7 +5,7 @@ import numpy as np
 
 
 def iter_root(f, g, x0):
-    eps = math.pow(10, -8)
+    eps = 1e-8
     max_iter = 1000
     num_iter = 0
     xn = x0
@@ -53,7 +53,7 @@ def secant_method(f, a, b, eps):
 def q1c():
     a = 0.5
     bs = [0.500001, 0.6, 0.7]
-    eps = math.pow(10, -15)
+    eps = 1e-15
     f = lambda x: math.pow(x, 3) + x - 1
     for b in bs:
         r, num_iter = secant_method(f, a, b, eps)
@@ -79,7 +79,7 @@ def q2c(eps, delta):
 
 
 def q3a_factorial(n):
-    return math.pow(n, n) / factorial(n, exact=True)
+    return (n ** n) / factorial(n, exact=True)
 
 
 def q3b():
@@ -108,7 +108,7 @@ def get_a(i, j, n):
 
 def init_iter_method(n):
     max_iter = math.pow(n, 2)
-    eps = math.pow(10, -10)
+    eps = 1e-10
     b = np.ones(n, dtype=np.float64) * (2 * n)
     x_0 = np.zeros_like(b)
 
@@ -181,4 +181,4 @@ def q4b():
 
 
 if __name__ == '__main__':
-    print(f"{q2c(5e-7, 1e-7):e}")
+    q3b()
